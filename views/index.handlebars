@@ -1,0 +1,18 @@
+<h1>Burgers</h1>
+
+<ul>
+    {{#each burgers}}
+
+        <li>
+            <h2>{{this.id}}</h2>
+            <h2>{{this.burger_name}}</h2>
+            <h2>{{this.burgers}}</h2>
+            <a href="/create">Create</a>
+            <button class="upbutton" data-id={{this.id}}>Update</button>
+            <button class="delbutton" data-id={{this.id}}>Delete</button>
+            <a href="/update/{{this.id}}">Update Now</a>
+            
+        </li>
+
+    {{/each}}
+</ul>
