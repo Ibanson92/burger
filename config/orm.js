@@ -4,7 +4,7 @@ var mysql = require("mysql");
 
 var orm = {
 
-    selectAll: function(col, table, cb)
+    selectAll: function (tableInput, cb)
     {
 
         var queryString = "SELECT * FROM burgers";
@@ -18,20 +18,13 @@ var orm = {
         });
 
     },
-    insertOne: function(col, table, cb)
-    {
+    insertOne: function (tableInput, cb){
 
-        var queryString = "INSERT INTO burgers";
-        connection.query(queryString, [col, table], function(err, result){
-                if(err)throw err;
-
-              console.log(result);  
-
-              cb(err, result);
-
-        });
-
-    },
+        connection.query('SELECT * FROM '+tableInput +';', function (err, result) {
+            if (err) throw err;
+            cb(result);
+        })
+     },
     updateOne: function(col, table, cb)
     {
 

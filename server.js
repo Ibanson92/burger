@@ -6,7 +6,7 @@ var orm = require("./config/orm");
 
 
 
-var controller = require("./controllers/burgers_controller");
+var controller = require("./controllers/burgers_controllers");
 
 
 var PORT = process.env.PORT || 8170;
