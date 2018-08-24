@@ -8,7 +8,7 @@ var orm = {
     {
 
         var queryString = "SELECT * FROM burgers";
-        connection.query(queryString, [col, table], function(err, result){
+        connection.query(queryString,  function(err, result){
                 if(err)throw err;
 
               console.log(result);  

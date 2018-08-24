@@ -3,7 +3,7 @@ var router = express.Router();
 var burgers = require("../models/burger.js");
 
 router.get('/', function(req, res) {
-    burgers.selectAll({}).then(function(burger_data) {
+    burgers.selectAll(function(burger_data) {
         console.log(burger_data);
         res.render("index", {burger_data}); 
     });
