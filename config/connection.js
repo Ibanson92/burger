@@ -1,7 +1,4 @@
-
-
 var mysql = require("mysql");
-
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -13,11 +10,11 @@ var connection = mysql.createConnection({
   database: "burgers_db"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
   }
-console.log("connected");
+  console.log("connected");
 });
 
 module.exports = connection;
